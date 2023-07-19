@@ -1,0 +1,123 @@
+﻿@model CargoSample2.Models.CargoViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CargoViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CargoId" class="control-label"></label>
+                <input asp-for="CargoId" class="form-control" />
+                <span asp-validation-for="CargoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoName" class="control-label"></label>
+                <input asp-for="CargoName" class="form-control" />
+                <span asp-validation-for="CargoName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place" class="control-label"></label>
+                <input asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cargotype" class="control-label"></label>
+                <input asp-for="cargotype" class="form-control" />
+                <span asp-validation-for="cargotype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+
+
+@*@model CustomerViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit a customer</h1>
+
+<form asp-controller="Customers" asp-action="Edit" method="post">
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label asp-for="UserName" class="form-label"></label>
+                <input type="text" asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustName" class="form-label"></label>
+                <input type="text" asp-for="CustName" class="form-control" />
+                <span asp-validation-for="CustName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustAddress" class="form-label"></label>
+                <input type="text" asp-for="CustAddress" class="form-control" />
+                <span asp-validation-for="CustAddress"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustPhNo" class="form-label"></label>
+                <input type="text" asp-for="CustPhNo" class="form-control" />
+                <span asp-validation-for="CustPhNo"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="CustEmail" class="form-label"></label>
+                <input type="text" asp-for="CustEmail" class="form-control" />
+                <span asp-validation-for="CustEmail"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="CustPassword" class="form-label"></label>
+                <input type="text" asp-for="CustPassword" class="form-control" />
+                <span asp-validation-for="CustPassword"></span>
+            </div>
+
+
+
+
+
+
+
+            <div class="mt-2" d-grid>
+                <input type="submit" class="btn btn-primary" value="Edit" />
+
+            </div>
+        </div>
+    </div>
+</form>
+*@

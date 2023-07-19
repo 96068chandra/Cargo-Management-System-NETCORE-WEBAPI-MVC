@@ -1,0 +1,90 @@
+﻿@model CargoViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<head>
+    <style>
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            min-width: 160px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+            .dropdown-item:hover {
+                background-color: #ddd;
+            }
+    </style>
+</head>
+<h1>Create a Cargo</h1>
+<form asp-controller="CargoesController1" asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label asp-for="CargoName" class="form-label"></label>
+                <input type="text" asp-for="CargoName" class="form-control" />
+                <span asp-validation-for="CargoName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="Place" class="form-label"></label>
+                <input type="text" asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="OrderDate" class="form-label"></label>
+                <input type="text" asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Price" class="form-label"></label>
+                <input type="text" asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Weight" class="form-label"></label>
+                <input type="text" asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight"></span>
+            </div>
+
+
+            <div class="mb-2">
+                <label asp-for="Id" class="form-label">Cargo Type</label>
+                <select asp-for="Id" asp-items="@(new SelectList(Model.cargotype,"Id","Name"))" class="dropdown">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="Id"></span>
+            </div>
+
+            <div class="mt-2 d-grid">
+                <input type="submit" class="btn-outline-primary" value="Add New" />
+            </div>
+
+        </div>
+
+    </div>
+</form>
+
+

@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<form asp-controller="Employees" asp-action="Create" method="post">
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label asp-for="UserName" class="form-label"></label>
+                <input type="text" asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="EmpName" class="form-label"></label>
+                <input type="text" asp-for="EmpName" class="form-control" />
+                <span asp-validation-for="EmpName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="EmpPhNo" class="form-label"></label>
+                <input type="text" asp-for="EmpPhNo" class="form-control" />
+                <span asp-validation-for="EmpPhNo"></span>
+            </div>
+           
+
+            <div class="mb-2">
+                <label asp-for="EmpEmail" class="form-label"></label>
+                <input type="text" asp-for="EmpEmail" class="form-control" />
+                <span asp-validation-for="EmpEmail"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="Password" class="form-label"></label>
+                <input type="text" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            @*<input type="hidden" asp-for="IsApproved" value="-1" />*@
+
+
+
+@*
+            @Html.Partial("_PartialGetCargoById");*@
+
+
+
+            <div class="mt-2" d-grid>
+                <input type="submit" class="btn btn-primary" value="Register" />
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,184 @@
+﻿@model IEnumerable<CargoSample2.Models.CargoOrderViewModel>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+</head>
+<style>
+    /* .flex {
+                                        background-color: #2c3e50;
+                                        width: 300px;
+                                        height: 630px;
+                                        margin-left: -120px;
+                                        margin-top: -50px;
+                                    }
+
+                                    .flex, ul, li {
+                                        color: aliceblue;
+                                        text-decoration: none;
+                                        list-style: none;
+                                    }
+
+                                    .flex, ul, li, a {
+                                        text-decoration: none;
+                                        color: white
+                                    }*/
+    #list-items ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    #list-items li {
+        margin-bottom: 1em;
+        list-style: none;
+    }
+
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 bg-light d-flex flex-row flex-wrap">
+            <div class="flex" id="list-items">
+                <button onclick="show_hide() class = " button"></button>
+
+                <ul>
+                    <li><a asp-controller="Customers" asp-action="Edit" asp-route-CustId=1>Personal Info</a></li>
+                    <li><a asp-controller="Customers" asp-action="CreateOrder">Create Order</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="card-deck mb-3 mt-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewBag.PendingOrders</h5>
+                        <p class="card-text">Yet to Deliver  </p>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewBag.TotalOrders</h5>
+                        <p class="card-text">Total Orders</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReceiverName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReceiverEmail)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReceiverPhoneNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsAccepted)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CargoStatusId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CustId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CargoTypeId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CityId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Weight)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReceiverName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReceiverEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReceiverPhoneNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsAccepted)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CargoStatusId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CargoTypeId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CityId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Weight)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+
+                              @*  <a asp-action="Edit" asp-controller="CargoOrders" asp-route-id=@item.Id class="btn btn-primary ">Edit</a>
+                                @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
+                                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })*@
+                                <a asp-action="Details" asp-controller="CargoOrders" asp-route-id=@item.Id class="btn btn-primary ">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

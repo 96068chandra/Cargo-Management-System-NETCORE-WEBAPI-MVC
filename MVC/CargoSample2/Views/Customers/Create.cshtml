@@ -1,0 +1,98 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CustomerViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+@*<h1>Register a customer</h1>
+
+<form asp-controller="Customers" asp-action="Create" method="post">
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label asp-for="UserName" class="form-label"></label>
+                <input type="text" asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustName" class="form-label"></label>
+                <input type="text" asp-for="CustName" class="form-control" />
+                <span asp-validation-for="CustName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustAddress" class="form-label"></label>
+                <input type="text" asp-for="CustAddress" class="form-control" />
+                <span asp-validation-for="CustAddress"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="CustPhNo" class="form-label"></label>
+                <input type="text" asp-for="CustPhNo" class="form-control" />
+                <span asp-validation-for="CustPhNo"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="CustEmail" class="form-label"></label>
+                <input type="text" asp-for="CustEmail" class="form-control" />
+                <span asp-validation-for="CustEmail"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="CustPassword" class="form-label"></label>
+                <input type="text" asp-for="CustPassword" class="form-control" />
+                <span asp-validation-for="CustPassword"></span>
+            </div>
+
+
+
+
+
+
+
+            <div class="mt-2" d-grid>
+                <input type="submit" class="btn btn-primary" value="Register" />
+
+            </div>
+        </div>
+    </div>
+</form>*@
+<div class="container">
+    <h2 class="text-center">Customer Registration</h2>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form asp-controller="Customers" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="UserName">Username:</label>
+                    <input type="text" class="form-control" id="Username" name="Username" asp-for="UserName">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustName">Customer Name:</label>
+                    <input type="text" class="form-control" id="CustName" name="CustName" asp-for="CustName">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustAddress">Address:</label>
+                    <input type="text" class="form-control" id="CustAddress" name="CustAddress" asp-for="CustAddress">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustPhNo">Phone Number:</label>
+                    <input type="text" class="form-control" id="CustPhNo" name="CustPhNo" asp-for="CustPhNo">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustEmail">Email:</label>
+                    <input type="email" class="form-control" id="CustEmail" name="CustEmail" asp-for="CustEmail">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustPassword">Password:</label>
+                    <input type="password" class="form-control" id="CustPassword" name="CustPassword" asp-for="CustAddress">
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <a asp-controller="Customers" asp-action="Login" class="btn btn-primary" >Login</a>
+           
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model List<CustomerViewModel>
+@{
+    ViewData["Title"] = "SearchByName";
+}
+
+<h1>SearchByName</h1>
+
+<div class="col-md-5">
+    <div class="col text-end">
+    </div>
+
+    <form asp-controller="Employee" asp-action="SearchByName" method="get">
+
+        <div class="input-group md-form form-control-sm form-2 p1-0">
+            <input type="text" class="form-control my-0 py-1 red-border" placeholder="search" value="" aria-label="Search" name="name" />
+            <div class="input-group-append">
+                <input type="submit" id="btnSubmit1" value="Search" class="btn btn-primary" />
+
+
+            </div>
+
+
+        </div>
+    </form>
+
+
+
+
+
+    <br />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr style="background-color:#37517e;">
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.CustEmail</td>
+                    @*<td><a asp-controller="Customers" asp-action="Details" asp-route-id="@item.CustId" class="btn btn-warning">Details</a></td>*@
+                    <td><a asp-controller="Employees" asp-action="EditCustomer" asp-route-id=@item.CustId class="btn btn-primary">Edit</a></td>
+                    @*<td><a asp-controller="Customers" asp-action="Delete" asp-route-id="@item.CustId" class="btn btn-danger">Delete</a></td>*@
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>

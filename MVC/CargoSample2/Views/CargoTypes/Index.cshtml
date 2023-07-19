@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CargoSample2.Models.CargoType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<h1>Index</h1>
+<p>
+    <a asp-controller="CargoTypes" asp-action="Create">Create New</a>
+</p>
+
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExtraWeight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExtraPrice)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExtraWeight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExtraPrice)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="CargoTypes" asp-route-id="@item.Id">Edit</a>
+
+                        <a asp-action="Details" asp-controller="CargoTypes" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-controller="CargoTypes" asp-route-id="@item.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Dashboard" asp-controller="Admin">Back to Dashboard</a>
+    </div>
+</div>
+
+

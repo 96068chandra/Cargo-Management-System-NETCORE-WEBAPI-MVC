@@ -1,0 +1,109 @@
+﻿@model IEnumerable<CargoSample2.Models.CargoOrderViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverPhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAccepted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoStatusId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoTypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiverName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiverEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiverPhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAccepted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoStatusId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoTypeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="City" asp-route-id="@item.Id">Edit</a>
+
+                    <a asp-action="Details" asp-controller="City" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-controller="City" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

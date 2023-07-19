@@ -1,0 +1,116 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<CustomerViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<div class="row">
+
+
+
+    <div class="col-md-5">
+        <div class="col text-end">
+            <a asp-controller="Customers" asp-action="Create" class="btn btn-warning">Register New Customer</a>
+
+        </div>
+        <form asp-controller="Customers" asp-action="index" method="get">
+            <div class="input-group md-form form-control-sm form-2 p1-0">
+                <input type="text" class="form-control my-0 py-1 red-border" placeholder="search" value="" aria-label="Search" name="genrename" />
+                <div class="input-group-append">
+                    <input type="submit" id="btnSubmit1" value="Search" />
+
+
+                </div>
+
+
+            </div>
+        </form>
+
+
+
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+
+                    <th>Email</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+
+                        <td>@item.UserName</td>
+                        <td>
+                            <a asp-controller="Customers" asp-action="Details" asp-route-id="@item.CustId">Details</a>
+                            <a asp-controller="Customers" asp-action="Edit" asp-route-id="@item.CustId">Edit</a>
+                            <a asp-controller="Customers" asp-action="Delete" asp-route-id="@item.CustId">Delete</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>*@
+<div class="col-md-5">
+    <div class="col text-end">
+    </div>
+    <form asp-controller="Customers" asp-action="index" method="get">
+        <div class="input-group md-form form-control-sm form-2 p1-0">
+            <input type="text" class="form-control my-0 py-1 red-border" placeholder="search" value="" aria-label="Search" name="CustName" />
+            <div class="input-group-append">
+                <input type="submit" id="btnSubmit1" value="Search" class="btn btn-primary" />
+
+
+            </div>
+
+
+        </div>
+    </form>
+
+
+    <a asp-action="SearchByName" asp-controller="Customers">Click to Search By Name </a>
+
+
+
+
+    <br />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr style="background-color:#37517e;">
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.CustEmail</td>
+                    <td><a asp-controller="Customers" asp-action="Details" asp-route-id="@item.CustId" class="btn btn-warning">Details</a></td>
+                    <td><a asp-controller="Customers" asp-action="Edit" asp-route-id="@item.CustId" class="btn btn-primary">Edit</a></td>
+                    <td><a asp-controller="Customers" asp-action="Delete" asp-route-id="@item.CustId" class="btn btn-danger">Delete</a></td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>
